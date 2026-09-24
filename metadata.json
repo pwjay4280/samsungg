@@ -1,0 +1,6 @@
+{
+  "name": "삼성G병원 - 관절·척추·정형외과 전문 웹 플랫폼 & CMS",
+  "description": "삼성G병원 공식 웹 플랫폼. 척추·관절 비수술 및 맞춤 수술 전문 진료센터, 1:1 전문의 온라인 상담, 실시간 치료후기(의료법 준수 인증), 간편 빠른예약, 원격/실시간 인라인 에디팅 CMS 및 네이버/구글 검색엔진 최적화(SEO) 시스템 구축.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
