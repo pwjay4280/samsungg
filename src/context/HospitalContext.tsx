@@ -122,6 +122,37 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       .catch(() => {});
   }, []);
 
+  // Synchronize document title and SEO meta tags when hospitalInfo changes
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      if (hospitalInfo.seoTitle) {
+        document.title = hospitalInfo.seoTitle;
+      }
+      if (hospitalInfo.seoDescription) {
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.setAttribute("content", hospitalInfo.seoDescription);
+        }
+        let ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+          ogDesc.setAttribute("content", hospitalInfo.seoDescription);
+        }
+      }
+      if (hospitalInfo.seoTitle) {
+        let ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+          ogTitle.setAttribute("content", hospitalInfo.seoTitle);
+        }
+      }
+      if (hospitalInfo.seoKeywords) {
+        let metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (metaKeywords) {
+          metaKeywords.setAttribute("content", hospitalInfo.seoKeywords);
+        }
+      }
+    }
+  }, [hospitalInfo.seoTitle, hospitalInfo.seoDescription, hospitalInfo.seoKeywords]);
+
   const login = (role: "patient" | "doctor" | "admin", name?: string) => {
     let user: AppUser;
     if (role === "admin") {

@@ -347,8 +347,8 @@ function buildSeoMeta(urlPath: string) {
   const canonicalUrl = `${baseUrl}${canonicalPath}`;
 
   // Default SEO
-  let title = hospitalInfo.seoTitle || "삼성G정형외과 - 관절·척추·정형외과 전문 웹 플랫폼 & CMS";
-  let description = hospitalInfo.seoDescription || "삼성G정형외과 공식 웹사이트. 척추내시경, 로봇인공관절, 1:1 도수재활.";
+  let title = hospitalInfo.seoTitle || "삼성G정형외과 - 척추·관절·정형외과 전문 의료기관";
+  let description = hospitalInfo.seoDescription || "강남역 9번 출구 삼성G정형외과. 양방향 척추내시경, 로봇 인공관절수술, 비수술 도수재활 클리닉, 대학병원급 3.0T MRI 및 무균수술실 완비.";
   let ogImage = hospitalInfo.seoOgImage || "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80";
   let jsonLd: any = {
     "@context": "https://schema.org",
